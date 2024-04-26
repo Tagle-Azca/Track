@@ -14,9 +14,7 @@ The primary purpose of this repository is to maintain a structured and accessibl
 
 Thank you for visiting, and I hope you find the contents of this repository interesting and informative!
 
-
-
-# creator
+# creator :shushing_face: :deaf_person:
 
 ## Andres Gomez Tagle Azcarraga
 

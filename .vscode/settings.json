@@ -1,5 +1,7 @@
 {
   "files.associations": {
-    "transacciones.h": "c"
+    "transacciones.h": "c",
+    "stdio.h": "c",
+    "nombredestino.h": "c"
   }
 }

@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int NombreDestino()
+int NomDestino()
 {
     char nombre[100];
 

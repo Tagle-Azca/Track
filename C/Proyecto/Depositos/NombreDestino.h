@@ -1,6 +1,6 @@
-#ifndef NOMBRE_DESTINO_H
-#define NOMBRE_DESTINO_H
+#ifndef BANCO_H
+#define BANCO_H
 
-int NombreDestino();  // Cambia la firma si decides manejar la entrada dentro de la función
+int NomDestino(); // Prototipo de la función
 
-#endif // NOMBRE_DESTINO_H
+#endif

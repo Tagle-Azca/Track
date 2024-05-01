@@ -1,18 +1,28 @@
 #include <stdio.h>
+#include <ctype.h>
 #include <string.h>
 
-const int MoneyError = 0;
-int puntoDecimalContado = 0;
-
-int esSoloNumeros(const char *str)
+int esSoloNumerosMonto(const char *str)
 {
+    int puntoDecimalContado = 0; // Hacerlo local para resetear cada vez que se llama a la función
+
     for (int i = 0; str[i] != '\0'; i++)
     {
-        if (str[i] == '.' && puntoDecimalContado == 0)
+        if (str[i] == '.')
         {
+            if (puntoDecimalContado == 1) // Ya se encontró un punto decimal antes
+            {
+                return 0;
+            }
             puntoDecimalContado = 1;
+
+            // Comprobar si hay al menos un dígito después del punto decimal
+            if (!isdigit(str[i + 1]))
+            {
+                return 0;
+            }
         }
-        else if (!isdigt(str[i]))
+        else if (!isdigit(str[i]))
         {
             return 0;
         }
@@ -33,14 +43,17 @@ double SolicitudMonto()
         {
             continue;
         }
+        // Eliminar posible nueva línea al final del buffer, antes de la validación
+        buffer[strcspn(buffer, "\n")] = 0;
+
         resultado = sscanf(buffer, "%lf", &monto);
-        if (resultado == 1 && esSoloNumeros(buffer))
+        if (resultado == 1 && esSoloNumerosMonto(buffer))
         {
             break;
         }
         else
         {
-            printf("Error: entrada invalida.");
+            printf("Error: entrada invalida.\n");
         }
     } while (1);
 

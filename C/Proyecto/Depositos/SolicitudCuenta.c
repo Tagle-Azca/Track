@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int esSoloNumeros(const char *str)
+int esSoloNumerosCuenta(const char *str)
 {
     for (int i = 0; str[i] != '\0'; i++)
     {
@@ -14,7 +14,7 @@ int esSoloNumeros(const char *str)
     return 1;
 }
 
-int Depositar()
+int SolicitudCuenta()
 {
     char buffer[100];
     char cuentaOrigen[17];
@@ -37,7 +37,7 @@ int Depositar()
             while (getchar() != '\n')
                 ;
         }
-        valido = (strlen(cuentaOrigen) == 16) && esSoloNumeros(cuentaOrigen);
+        valido = (strlen(cuentaOrigen) == 16) && esSoloNumerosCuenta(cuentaOrigen);
         if (!valido)
         {
             printf("Número de cuenta inválido, debe ser de 16 dígitos numéricos.\n");
@@ -60,7 +60,7 @@ int Depositar()
             while (getchar() != '\n')
                 ;
         }
-        valido = (strlen(cuentaDestino) == 16) && esSoloNumeros(cuentaDestino);
+        valido = (strlen(cuentaDestino) == 16) && esSoloNumerosCuenta(cuentaDestino);
         if (!valido)
         {
             printf("Número de cuenta inválido, debe ser de 16 dígitos numéricos.\n");

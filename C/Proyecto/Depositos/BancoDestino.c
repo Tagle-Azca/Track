@@ -10,6 +10,7 @@ int numBancos = sizeof(bancos) / sizeof(bancos[0]);
 int BaDestino()
 {
     char input[100];
+    printf("Ingresar el banco del destino");
     printf("Bancos disponibles:\n");
     for (int i = 0; i < numBancos; i++)
     {

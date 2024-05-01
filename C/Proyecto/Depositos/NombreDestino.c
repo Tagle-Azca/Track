@@ -1,9 +1,9 @@
-#include "NombreDestino.h"
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 
-int NomDestino()
+int NombreDestino()
 {
     char nombre[100];
 

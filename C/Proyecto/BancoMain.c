@@ -2,6 +2,7 @@
 #include "Depositos/SolicitudCuenta.h"
 #include "Depositos/NombreDestino.h"
 #include "Depositos/BancoDestino.h"
+#include <stdlib.h>
 
 enum Transaccion
 {
@@ -13,6 +14,9 @@ enum Transaccion
     CambioNIP
 };
 
+const int VALID_INPUT = 1;
+const int ErrorMain = 0;
+
 int main()
 {
     int choice;
@@ -21,13 +25,16 @@ int main()
     printf("Por favor, selecciona la opción que deseas realizar:\n");
     printf("0 - Depositar\n1 - Retiro de Efectivo\n2 - Estado de Cuenta\n3 - Movimientos Recientes\n4 - Inversión\n5 - Cambio de NIP\n");
 
-    if (fgets(input, sizeof(input), stdin) && sscanf(input, "%d", &choice) == 1)
+    int user_input = fgets(input, sizeof(input), stdin) && sscanf(input, "%d", &choice);
+
+    if (user_input == VALID_INPUT)
     {
         if (choice < DepositarOPC || choice > CambioNIP)
         {
             printf("No es una opción válida.\n");
-            return 1;
+            return VALID_INPUT;
         }
+        system("clear");
 
         switch (choice)
         {
@@ -35,17 +42,17 @@ int main()
             if (!Depositar())
             {
                 printf("Error en la solicitud de Cuenta.\n");
-                return 1;
+                return VALID_INPUT;
             }
             if (!NomDestino())
             {
                 printf("Error en la validación del nombre del destinatario.\n");
-                return 1;
+                return VALID_INPUT;
             }
-            if (BaDestino() == 0)
+            if (!BaDestino())
             {
                 printf("Error en la validación del banco destino.\n");
-                return 1;
+                return VALID_INPUT;
             }
             break;
 
@@ -57,8 +64,8 @@ int main()
     else
     {
         printf("Entrada inválida.\n");
-        return 1;
+        return VALID_INPUT;
     }
 
-    return 0;
+    return ErrorMain;
 }

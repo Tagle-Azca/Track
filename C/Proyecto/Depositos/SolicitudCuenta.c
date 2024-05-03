@@ -2,6 +2,10 @@
 #include <string.h>
 #include <ctype.h>
 
+// Variables globales para almacenar los datos de cuenta
+extern char cuentaOrigenTicket[17];
+extern char cuentaDestinoTicket[17];
+
 int esSoloNumerosCuenta(const char *str)
 {
     for (int i = 0; str[i] != '\0'; i++)
@@ -14,11 +18,9 @@ int esSoloNumerosCuenta(const char *str)
     return 1;
 }
 
-int SolicitudCuenta()
+void SolicitudCuenta()
 {
     char buffer[100];
-    char cuentaOrigen[17];
-    char cuentaDestino[17];
     int valido;
 
     // Solicitar cuenta de origen
@@ -30,14 +32,14 @@ int SolicitudCuenta()
             // Manejar posible error de lectura
             continue;
         }
-        sscanf(buffer, "%16s", cuentaOrigen);
-        if (buffer[strlen(cuentaOrigen)] != '\n')
+        sscanf(buffer, "%16s", cuentaOrigenTicket);
+        if (buffer[strlen(cuentaOrigenTicket)] != '\n')
         {
             // Limpia el buffer si el usuario ingresa más de 16 dígitos
             while (getchar() != '\n')
                 ;
         }
-        valido = (strlen(cuentaOrigen) == 16) && esSoloNumerosCuenta(cuentaOrigen);
+        valido = (strlen(cuentaOrigenTicket) == 16) && esSoloNumerosCuenta(cuentaOrigenTicket);
         if (!valido)
         {
             printf("Número de cuenta inválido, debe ser de 16 dígitos numéricos.\n");
@@ -53,19 +55,17 @@ int SolicitudCuenta()
             // Manejar posible error de lectura
             continue;
         }
-        sscanf(buffer, "%16s", cuentaDestino);
-        if (buffer[strlen(cuentaDestino)] != '\n')
+        sscanf(buffer, "%16s", cuentaDestinoTicket);
+        if (buffer[strlen(cuentaDestinoTicket)] != '\n')
         {
             // Limpia el buffer si el usuario ingresa más de 16 dígitos
             while (getchar() != '\n')
                 ;
         }
-        valido = (strlen(cuentaDestino) == 16) && esSoloNumerosCuenta(cuentaDestino);
+        valido = (strlen(cuentaDestinoTicket) == 16) && esSoloNumerosCuenta(cuentaDestinoTicket);
         if (!valido)
         {
             printf("Número de cuenta inválido, debe ser de 16 dígitos numéricos.\n");
         }
     } while (!valido);
-
-    return 1;
 }

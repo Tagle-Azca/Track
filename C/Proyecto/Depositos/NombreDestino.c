@@ -1,7 +1,8 @@
-
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+
+extern char NombreDestinoTicket[50];
 
 int NombreDestino()
 {
@@ -28,5 +29,8 @@ int NombreDestino()
             return 0;
         }
     }
+
+    strcpy(NombreDestinoTicket, nombre);
+
     return 1; // Devuelve 1 si el nombre es válido
 }

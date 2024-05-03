@@ -1,6 +1,8 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <string.h>
+
+// Variable global para almacenar el monto del depósito
+extern double montoTicket;
 
 int esSoloNumerosMonto(const char *str)
 {
@@ -30,7 +32,7 @@ int esSoloNumerosMonto(const char *str)
     return 1;
 }
 
-double SolicitudMonto()
+void SolicitudMonto()
 {
     char buffer[100];
     double monto = 0.0;
@@ -49,6 +51,8 @@ double SolicitudMonto()
         resultado = sscanf(buffer, "%lf", &monto);
         if (resultado == 1 && esSoloNumerosMonto(buffer))
         {
+            // Asignar el monto del depósito a la variable global
+            montoTicket = monto;
             break;
         }
         else
@@ -56,6 +60,4 @@ double SolicitudMonto()
             printf("Error: entrada invalida.\n");
         }
     } while (1);
-
-    return monto;
 }

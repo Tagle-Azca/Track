@@ -15,6 +15,12 @@ enum Transaccion
 const int VALID_INPUT = 1;
 const int ErrorMain = 0;
 
+char cuentaOrigenTicket[17];
+char cuentaDestinoTicket[17];
+char nombreBancoTicket[50];
+char NombreDestinoTicket[50];
+double monto = 0.0; // Asegúrate de inicializar el monto según tus necesidades
+
 int main()
 {
     int choice;

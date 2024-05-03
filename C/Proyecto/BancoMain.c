@@ -5,11 +5,11 @@
 enum Transaccion
 {
     DepositarOPC,
-    RetiroEfectivo,
+    CambioNIP,
     EstadoDeCuenta,
     MovimientosRecientes,
     Inversion,
-    CambioNIP
+    Cancelar
 };
 
 const int VALID_INPUT = 1;
@@ -27,7 +27,7 @@ int main()
     char input[50];
 
     printf("Por favor, selecciona la opción que deseas realizar:\n");
-    printf("0 - Depositar\n1 - Retiro de Efectivo\n2 - Estado de Cuenta\n3 - Movimientos Recientes\n4 - Inversión\n5 - Cambio de NIP\n");
+    printf("0 - Depositar\n1 - Cambio de NIP\n2 - Estado de Cuenta\n3 - Movimientos Recientes\n4 - Inversión\n5 - Cancelar \n");
 
     if (fgets(input, sizeof(input), stdin) && sscanf(input, "%d", &choice) == VALID_INPUT)
     {

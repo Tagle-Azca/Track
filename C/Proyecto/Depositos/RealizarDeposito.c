@@ -3,6 +3,8 @@
 #include "/Users/tagle/Documents/Git/C/Proyecto/Include/NombreDestino.h"
 #include "/Users/tagle/Documents/Git/C/Proyecto/Include/BancoDestino.h"
 #include "/Users/tagle/Documents/Git/C/Proyecto/Include/SolicitudMonto.h"
+#include "/Users/tagle/Documents/Git/C/Proyecto/Include/ConfirmacionDeposito.h"
+#include "/Users/tagle/Documents/Git/C/Proyecto/Include/TicketDeposito.h"
 
 int RealizarDeposito()
 {
@@ -27,5 +29,13 @@ int RealizarDeposito()
         printf("Error en la validación del monto.\n");
         return 0;
     }
+    if (!ConfirmacionDeposito())
+    {
+        printf("Error en la validación del Deposito.\n");
+        return 0;
+    }
+
+    TicketDeposito();
+
     return 1;
 }

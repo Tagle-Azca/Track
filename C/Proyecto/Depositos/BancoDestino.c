@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
+// Variable global para almacenar el nombre del banco destino
+extern char nombreBancoTicket[50];
+
 const int Valid_bank = 1;
 const int Error = 0;
 
@@ -10,7 +13,7 @@ int numBancos = sizeof(bancos) / sizeof(bancos[0]);
 int BaDestino()
 {
     char input[100];
-    printf("Ingresar el banco del destino");
+    printf("Ingresar el banco del destino\n");
     printf("Bancos disponibles:\n");
     for (int i = 0; i < numBancos; i++)
     {
@@ -19,12 +22,14 @@ int BaDestino()
 
     printf("Ingrese el nombre del banco destino: ");
     fgets(input, sizeof(input), stdin);
-    input[strcspn(input, "\n")] = Error; // Eliminar el salto de línea al final del input
+    input[strcspn(input, "\n")] = '\0'; // Eliminar el salto de línea al final del input
 
     for (int i = 0; i < numBancos; i++)
     {
-        if (strcmp(bancos[i], input) == Error)
+        if (strcmp(bancos[i], input) == 0)
         {
+            // Asignar el nombre del banco destino a la variable global
+            strcpy(nombreBancoTicket, input);
             return Valid_bank; // Banco válido
         }
     }

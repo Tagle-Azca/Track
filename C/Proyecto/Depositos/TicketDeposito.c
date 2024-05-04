@@ -7,19 +7,19 @@
 #include "/Users/tagle/Documents/Git/C/Proyecto/Include/TicketDeposito.h"
 
 // Supongamos que estas son variables globales o locales pasadas correctamente
-extern char cuentaOrigenTicket[17];
-extern char cuentaDestinoTicket[17];
-extern char nombreBancoTicket[50];
+extern char CuentaOrigenTicket[17];
+extern char CuentaDestinoTicket[17];
+extern char NombreBancoTicket[50];
 extern char NombreDestinoTicket[50];
-extern double montoTicket;
+extern double MontoTicket;
 
 void TicketDeposito()
 {
     printf("\n====================== TICKET DE DEPOSITO ======================\n");
-    printf("    Cuenta de Origen: %s\n", cuentaOrigenTicket);
-    printf("    Cuenta Destino: %s\n", cuentaDestinoTicket);
-    printf("    Banco Destino: %s\n", nombreBancoTicket);
+    printf("    Cuenta de Origen: %s\n", CuentaOrigenTicket);
+    printf("    Cuenta Destino: %s\n", CuentaDestinoTicket);
+    printf("    Banco Destino: %s\n", NombreBancoTicket);
     printf("    Nombre del Destinatario: %s\n", NombreDestinoTicket);
-    printf("    Monto Depositado: $%.2f\n", montoTicket);
+    printf("    Monto Depositado: $%.2f\n", MontoTicket);
     printf("================================================================\n");
 }

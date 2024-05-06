@@ -2,8 +2,8 @@
 #include <ctype.h>
 #include <string.h>
 
-extern double montoTicket;
-double montoTicket; // Definición de la variable global
+extern double MontoTicket;
+double MontoTicket; // Definición de la variable global
 
 int esSoloNumerosMonto(const char *str)
 {
@@ -52,7 +52,7 @@ double SolicitudMonto()
         resultado = sscanf(buffer, "%lf", &monto);
         if (resultado == 1 && esSoloNumerosMonto(buffer))
         {
-            montoTicket = monto;
+            MontoTicket = monto;
             break;
         }
         else

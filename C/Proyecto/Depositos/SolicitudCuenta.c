@@ -3,8 +3,8 @@
 #include <ctype.h>
 
 // Variables globales para almacenar los datos de cuenta
-extern char cuentaOrigenTicket[17];
-extern char cuentaDestinoTicket[17];
+extern char CuentaOrigenTicket[17];
+extern char CuentaDestinoTicket[17];
 
 int esSoloNumerosCuenta(const char *str)
 {
@@ -32,14 +32,14 @@ void SolicitudCuenta()
             // Manejar posible error de lectura
             continue;
         }
-        sscanf(buffer, "%16s", cuentaOrigenTicket);
-        if (buffer[strlen(cuentaOrigenTicket)] != '\n')
+        sscanf(buffer, "%16s", CuentaOrigenTicket);
+        if (buffer[strlen(CuentaOrigenTicket)] != '\n')
         {
             // Limpia el buffer si el usuario ingresa más de 16 dígitos
             while (getchar() != '\n')
                 ;
         }
-        valido = (strlen(cuentaOrigenTicket) == 16) && esSoloNumerosCuenta(cuentaOrigenTicket);
+        valido = (strlen(CuentaOrigenTicket) == 16) && esSoloNumerosCuenta(CuentaOrigenTicket);
         if (!valido)
         {
             printf("Número de cuenta inválido, debe ser de 16 dígitos numéricos.\n");
@@ -55,14 +55,14 @@ void SolicitudCuenta()
             // Manejar posible error de lectura
             continue;
         }
-        sscanf(buffer, "%16s", cuentaDestinoTicket);
-        if (buffer[strlen(cuentaDestinoTicket)] != '\n')
+        sscanf(buffer, "%16s", CuentaDestinoTicket);
+        if (buffer[strlen(CuentaDestinoTicket)] != '\n')
         {
             // Limpia el buffer si el usuario ingresa más de 16 dígitos
             while (getchar() != '\n')
                 ;
         }
-        valido = (strlen(cuentaDestinoTicket) == 16) && esSoloNumerosCuenta(cuentaDestinoTicket);
+        valido = (strlen(CuentaDestinoTicket) == 16) && esSoloNumerosCuenta(CuentaDestinoTicket);
         if (!valido)
         {
             printf("Número de cuenta inválido, debe ser de 16 dígitos numéricos.\n");

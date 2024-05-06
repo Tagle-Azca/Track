@@ -1,6 +1,6 @@
-#ifndef BANCO_DESTINO_H
-#define BANCO_DESTINO_H
+#ifndef INGRESARBANCO_DESTINO_H
+#define INGRESARBANCO_DESTINO_H
 
-int BaDestino();
+int IngresarBancoDestino();
 
 #endif

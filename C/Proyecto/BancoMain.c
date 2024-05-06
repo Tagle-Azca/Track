@@ -5,7 +5,6 @@
 enum Transaccion
 {
     DepositarOPC,
-    CambioNIP,
     EstadoDeCuenta,
     MovimientosRecientes,
     Inversion,
@@ -15,9 +14,9 @@ enum Transaccion
 const int VALID_INPUT = 1;
 const int ErrorMain = 0;
 
-char cuentaOrigenTicket[17];
-char cuentaDestinoTicket[17];
-char nombreBancoTicket[50];
+char CuentaOrigenTicket[17];
+char CuentaDestinoTicket[17];
+char NombreBancoTicket[50];
 char NombreDestinoTicket[50];
 double monto = 0.0; // Asegúrate de inicializar el monto según tus necesidades
 
@@ -27,11 +26,11 @@ int main()
     char input[50];
 
     printf("Por favor, selecciona la opción que deseas realizar:\n");
-    printf("0 - Depositar\n1 - Cambio de NIP\n2 - Estado de Cuenta\n3 - Movimientos Recientes\n4 - Inversión\n5 - Cancelar \n");
+    printf("0 - Depositar\n1 - Estado de Cuenta\n2 - Movimientos Recientes\n3 - Inversión\n4 - Cancelar \n");
 
     if (fgets(input, sizeof(input), stdin) && sscanf(input, "%d", &choice) == VALID_INPUT)
     {
-        if (choice < DepositarOPC || choice > CambioNIP)
+        if (choice < DepositarOPC || choice > Cancelar)
         {
             printf("No es una opción válida.\n");
             return VALID_INPUT;

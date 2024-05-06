@@ -13,7 +13,7 @@ int RealizarDeposito()
         printf("Error en la solicitud de Cuenta.\n");
         return 0;
     }
-    if (!BaDestino())
+    if (!IngresarBancoDestino())
     {
         printf("Error en la validación del banco destino.\n");
         return 0;

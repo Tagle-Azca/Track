@@ -5,6 +5,9 @@
     "nombredestino.h": "c",
     "solicitudmonto.h": "c",
     "stdlib.h": "c",
-    "bancodestino.h": "c"
+    "bancodestino.h": "c",
+    "confirmaciondeposito.h": "c",
+    "ticketdeposito.h": "c",
+    "string.h": "c"
   }
 }

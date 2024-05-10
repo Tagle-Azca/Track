@@ -1,0 +1,12 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/tagle/Documents/Codes/practicar/C/output/Algoritmos'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x10000387C, symSize: 0x1F0 }
+  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _retscan, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x5D, offset: 0x5D, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x10000387C, symSize: 0x1F0 }
+  - { offsetInCU: 0xBD, offset: 0xBD, size: 0x8, addend: 0x0, symName: _print_array, symObjAddr: 0x1F0, symBinAddr: 0x100003A6C, symSize: 0xA0 }
+  - { offsetInCU: 0x10B, offset: 0x10B, size: 0x8, addend: 0x0, symName: _bubble_sort, symObjAddr: 0x290, symBinAddr: 0x100003B0C, symSize: 0xFC }
+  - { offsetInCU: 0x191, offset: 0x191, size: 0x8, addend: 0x0, symName: _selection_sort, symObjAddr: 0x38C, symBinAddr: 0x100003C08, symSize: 0xFC }
+  - { offsetInCU: 0x225, offset: 0x225, size: 0x8, addend: 0x0, symName: _binary_search, symObjAddr: 0x488, symBinAddr: 0x100003D04, symSize: 0xE4 }
+...

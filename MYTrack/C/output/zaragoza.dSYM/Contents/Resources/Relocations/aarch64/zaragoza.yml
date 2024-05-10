@@ -1,0 +1,8 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/tagle/Documents/Codes/practicar/C/output/zaragoza'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _mostrarConsonantes, symObjAddr: 0x0, symBinAddr: 0x100003E2C, symSize: 0x114 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _mostrarConsonantes, symObjAddr: 0x0, symBinAddr: 0x100003E2C, symSize: 0x114 }
+  - { offsetInCU: 0x65, offset: 0x65, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x114, symBinAddr: 0x100003F40, symSize: 0x3C }
+...

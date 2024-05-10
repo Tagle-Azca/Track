@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "transacciones.h": "c",
+    "stdio.h": "c",
+    "nombredestino.h": "c",
+    "solicitudmonto.h": "c",
+    "stdlib.h": "c",
+    "bancodestino.h": "c",
+    "confirmaciondeposito.h": "c",
+    "ticketdeposito.h": "c",
+    "string.h": "c"
+  }
+}
